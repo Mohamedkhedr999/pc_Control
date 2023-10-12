@@ -28,8 +28,8 @@ bool server_handler::server_intit()
         exit(EXIT_FAILURE); 
     } 
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr =inet_addr("192.168.1.108");//inet_addr("192.168.1.108");//INADDR_ANY; ;;    //inet_addr("192.168.1.255");
-    address.sin_port = htons(8888);
+    address.sin_addr.s_addr =inet_addr("0.0.0.0"); // pc ip should be here
+    address.sin_port = htons(8888); 
     if (bind(socket_fd, (struct sockaddr*)&address, sizeof(address) ) < 0)
     {
         return false;
